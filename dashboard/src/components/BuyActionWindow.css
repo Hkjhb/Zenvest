@@ -1,221 +1,399 @@
-.container {
-    --radius: 4px;
-    width: 40%;
-    height: 63%;
-    background: rgb(245, 245, 245);
-    position: absolute;
-    bottom: 0;
-    left: 35%;
-    cursor: move;
-    box-sizing: border-box;
-    z-index: 100;
-    border-radius: var(--radius);
-    border: 1px solid rgb(238, 238, 238);
-  }
-  
-  .dragging {
-    opacity: 0;
-  }
-  
-  .container .header {
-    width: 100%;
-    background: #4184f3;
-    box-sizing: border-box;
-    padding: 16px;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-  }
-  
-  .header h3 {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 6px;
-  }
-  
-  .header h3 span {
-    font-size: 0.6rem;
-  }
-  
-  .market-options {
-    font-weight: 300;
-    color: #fff;
-    font-size: 0.8rem;
-  }
-  
-  .market-options label,
-  .order-validity label input,
-  .sub-order-type label,
-  .sub-order-type label input,
-  .stop-loss-type label,
-  .stop-loss-type label input {
-    margin-right: 6px;
-    cursor: pointer;
-  }
-  
-  .market-options input[type="radio"] {
-    border: 1px solid #ddd;
-    cursor: pointer;
-    padding: 2px;
-    margin-right: 6px;
-  }
-  
-  .tab {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    border-bottom: 2px solid rgba(180, 180, 180, 0.6);
-  }
-  
-  .tab button {
-    border: none;
-    padding: 14px 16px;
-    background: transparent;
-    color: #4184f3;
-    font-weight: 400;
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-  
-  .regular-order {
-    padding: 16px 26px;
-    background-color: #fff;
-    padding-bottom: 30px;
-  }
-  
-  .regular-order label {
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-  
-  .order-validity {
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .order-validity label span {
-    color: rgb(190, 190, 190);
-  }
-  
-  .inputs {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .inputs fieldset {
-    max-width: 120px;
-    box-sizing: border-box;
-    border: 0.7px solid #ddd;
-    margin-right: 8px;
-  }
-  
-  .inputs fieldset legend {
-    margin-left: 10px;
-    font-size: 0.8rem;
-    padding: 0 4px;
-  }
-  
-  .inputs fieldset:last-of-type legend {
-    color: #ddd;
-  }
-  
-  .inputs fieldset input {
-    border: none;
-    margin-right: 8px;
-    max-width: 130px;
-    min-height: 35px;
-    padding: 0 12px;
-    box-sizing: border-box;
-    font-size: 1.1rem;
-  }
-  
-  .options {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .options span {
-    color: #4184f3;
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-  
-  .buttons {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    top: 10%;
-    padding: 0 20px;
-  }
-  
-  .buttons span {
-    font-size: 0.8rem;
-  }
-  
-  .btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 2px;
-    color: #fff;
-    margin-right: 2px;
-    margin-left: 2px;
-  }
-  
-  .btn-grey {
-    background: #d4d4d4;
-    color: #666666;
-  }
-  
-  .btn-blue {
-    background: #4184f3;
-  }
-  
-  /* sudo selectors */
-  .tab button::after {
-    content: "";
-    width: 100%;
-    height: 3px;
-    display: none;
-    margin-top: 10px;
-    background-color: #4184f3;
-  }
-  
-  .inputs fieldset:focus {
-    outline: none;
-    border: 0.7px solid rgb(49, 49, 49);
-    border-radius: 2px;
-  }
-  
-  .inputs fieldset input:focus {
-    outline: none;
-  }
-  
-  .inputs fieldset input:focus {
-    outline: none;
-  }
-  
-  .inputs fieldset input:disabled {
-    cursor: not-allowed;
-    background-color: transparent;
-  }
-  
-  .btn-blue:hover {
-    background: #74a7fa;
-  }
-  
-  .btn-grey:hover {
-    background: #9b9b9b;
-    color: #fff;
-  }
-  
+/* ─── Slide-up entrance ─────────────────────────────────── */
+@keyframes owSlideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0)    scale(1);    }
+}
+
+@keyframes owSuccess {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.12); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes shimmerSweep {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ─── Container ─────────────────────────────────────────── */
+.ow-container {
+  width: min(480px, calc(100% - 32px));
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  background: #fffcf7;
+  border: 1px solid #e6d5bb;
+  border-radius: 26px;
+  box-shadow: 0 32px 80px rgba(90, 50, 10, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  animation: owSlideUp 0.38s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ─── Header ────────────────────────────────────────────── */
+.ow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid #f0e5d4;
+}
+
+.ow-mode-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.ow-mode-badge.buy  { background: rgba(176,118,54,0.12); color: #b07636; }
+.ow-mode-badge.sell { background: rgba(217,98,67,0.12);  color: #d96243; }
+
+.ow-stock-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #231507;
+  letter-spacing: 0.02em;
+}
+
+.ow-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f0e8dc;
+  color: #7a6550;
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.ow-close:hover { background: #e8dccf; color: #231507; }
+
+/* ─── Live price strip ──────────────────────────────────── */
+.ow-price-strip {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #fdf5e8 0%, #faf0e0 100%);
+  border-bottom: 1px solid #f0e5d4;
+}
+
+.ow-price-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8907a;
+}
+
+.ow-price-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #231507;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Body ──────────────────────────────────────────────── */
+.ow-body {
+  padding: 18px 22px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ow-section-label {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a8907a;
+}
+
+/* ─── Order type toggle ─────────────────────────────────── */
+.ow-type-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ow-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 12px 10px;
+  border-radius: 16px;
+  border: 1.5px solid #e6d5bb;
+  background: transparent;
+  color: #7a6550;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  line-height: 1.2;
+}
+
+.ow-type-btn:hover {
+  background: #fdf5e8;
+  border-color: #d9c0a0;
+}
+
+.ow-type-btn.active {
+  border-color: #b07636;
+  background: rgba(176, 118, 54, 0.08);
+  color: #b07636;
+}
+
+.ow-type-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.ow-type-sub {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* ─── Inputs ────────────────────────────────────────────── */
+.ow-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ow-field {
+  min-width: 0;
+  border: 1.5px solid #dcc8ae;
+  border-radius: 16px;
+  margin: 0;
+  padding: 6px 14px 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ow-field:focus-within {
+  border-color: rgba(176, 118, 54, 0.5);
+  box-shadow: 0 0 0 4px rgba(176, 118, 54, 0.09);
+}
+
+.ow-field-locked {
+  background: rgba(250, 245, 238, 0.7);
+  border-color: #ecdec9;
+}
+
+.ow-field legend {
+  padding: 0 6px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8907a;
+}
+
+.ow-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #231507;
+  padding: 2px 0;
+  min-height: 38px;
+}
+
+.ow-field-locked input {
+  color: #7a6550;
+  cursor: default;
+}
+
+.ow-field input::placeholder {
+  color: #c9ad90;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ─── Hints ─────────────────────────────────────────────── */
+.ow-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(176, 118, 54, 0.07);
+  color: #7a5820;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ow-hint-market {
+  background: rgba(29, 138, 80, 0.07);
+  color: #1d6a3a;
+}
+
+.ow-hint-icon { flex-shrink: 0; font-size: 0.9rem; }
+
+/* ─── Error ─────────────────────────────────────────────── */
+.ow-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(201, 58, 58, 0.08);
+  color: #c93a3a;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+  animation: fadeInUp 0.25s ease both;
+}
+
+.ow-error-icon { flex-shrink: 0; }
+
+/* ─── Footer ────────────────────────────────────────────── */
+.ow-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 22px 20px;
+  border-top: 1px solid #f0e5d4;
+  background: linear-gradient(180deg, #fffcf7 0%, #faf5ed 100%);
+}
+
+.ow-estimate {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ow-est-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8907a;
+}
+
+.ow-est-value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #231507;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Action buttons ────────────────────────────────────── */
+.ow-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ow-btn {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  white-space: nowrap;
+}
+
+.ow-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.26) 50%, rgba(255,255,255,0) 60%);
+  background-size: 200% 100%;
+  background-position: -200% center;
+}
+.ow-btn:hover::after { animation: shimmerSweep 0.5s ease forwards; }
+.ow-btn:hover        { transform: translateY(-2px); }
+.ow-btn:active       { transform: translateY(0); }
+.ow-btn:disabled     { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.ow-btn-buy {
+  color: #fff;
+  background: linear-gradient(135deg, #c08a42 0%, #9a6825 100%);
+  box-shadow: 0 10px 20px rgba(176,118,54,0.22);
+}
+.ow-btn-buy:hover  { box-shadow: 0 14px 28px rgba(176,118,54,0.32); }
+
+.ow-btn-sell {
+  color: #fff;
+  background: linear-gradient(135deg, #d96243 0%, #bf4d30 100%);
+  box-shadow: 0 10px 20px rgba(217,98,67,0.22);
+}
+.ow-btn-sell:hover { box-shadow: 0 14px 28px rgba(217,98,67,0.32); }
+
+.ow-btn-cancel {
+  color: #5a3e28;
+  background: #f0e8dc;
+}
+.ow-btn-cancel:hover { background: #e8dccf; }
+
+/* ─── Success state ─────────────────────────────────────── */
+.ow-success-state { padding: 0; }
+
+.ow-success {
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.ow-success-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1d9a5a, #16834a);
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: owSuccess 0.4s ease both;
+  box-shadow: 0 10px 24px rgba(29,138,80,0.28);
+}
+
+.ow-success-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #231507;
+}
+
+.ow-success-sub {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #7a6550;
+  line-height: 1.5;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .ow-container { bottom: 0; border-radius: 26px 26px 0 0; width: 100%; }
+  .ow-inputs    { grid-template-columns: 1fr; }
+  .ow-footer    { flex-direction: column; align-items: stretch; }
+  .ow-actions   { justify-content: stretch; }
+  .ow-btn       { flex: 1; text-align: center; }
+}

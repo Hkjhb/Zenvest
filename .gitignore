@@ -1,0 +1,14 @@
+backend/.env
+.env
+.env.*
+!.env.example
+!backend/.env.example
+backend/node_modules/
+dashboard/node_modules/
+frontend/node_modules/
+node_modules/
+dashboard/build/
+frontend/build/
+backend/build/
+*.log
+*.docx
