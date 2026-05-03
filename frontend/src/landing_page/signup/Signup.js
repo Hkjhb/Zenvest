@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
 import OpenAccount from "../OpenAccount";
 
 function Signup() {
+  const dashboardUrl = process.env.REACT_APP_DASHBOARD_URL || "/";
+
   return (
     <>
       <div className="container p-5">
@@ -38,16 +39,16 @@ function Signup() {
 
         <div className="row text-center">
           <div>
-            <Link
-              to="http://localhost:3001"
+            <a
+              href={dashboardUrl}
               className="p-3 btn btn-primary fs-5"
               style={{ width: "260px", margin: "0 auto" }}
             >
               Open your simulator account
-            </Link>
+            </a>
             <p className="text-muted mt-3">
               Already have an account?{" "}
-              <a href="http://localhost:3001" className="brand-link">Log in →</a>
+              <a href={dashboardUrl} className="brand-link">Log in →</a>
             </p>
           </div>
         </div>
