@@ -9,25 +9,26 @@ function Education() {
         <div className="col-md-6 section-left">
           <img
             src={placeholders.education}
-            alt="Education platform illustration"
+            alt="Stock trading simulator education illustration"
             style={{ width: "70%" }}
           />
         </div>
         <div className="col-md-6 section-right">
-          <h1 className="mb-3 fs-2">Free and open market education</h1>
+          <h1 className="mb-3 fs-2">Learn markets through simulation</h1>
           <p>
-            Varsity, the largest online stock market education book in the world,
-            covers everything from the basics to advanced trading.
+            Zenvest helps beginners understand trading screens, order placement,
+            portfolio movement, and profit/loss tracking through hands-on
+            practice.
           </p>
           <Link to="/product" className="brand-link">
-            Varsity →
+            See simulator features
           </Link>
           <p className="mt-5">
-            TradingQ&amp;A is an active trading and investment community in India for
-            all your market-related queries.
+            Use the support page as a quick guide for common simulator actions,
+            from opening a practice account to reading holdings and positions.
           </p>
           <Link to="/support" className="brand-link">
-            TradingQ&amp;A →
+            Browse help topics
           </Link>
         </div>
       </div>

@@ -5,9 +5,9 @@ function Hero() {
     <div className="container">
       <div className="row p-5 mt-5 mb-5">
         <h1 className="fs-2 text-center">
-          We pioneered the discount broking model in India
+          Zenvest is a stock trading simulator
           <br />
-          Now, we are breaking ground with our technology.
+          built for learning, practice, and confident decision-making.
         </h1>
       </div>
 
@@ -15,40 +15,36 @@ function Hero() {
         className="row p-5 mt-5 border-top text-muted"
         style={{ lineHeight: "1.8", fontSize: "1.2em" }}
       >
-        <div className="col-6 p-5">
+        <div className="col-md-6 p-5">
           <p>
-            We kick-started operations on the 15th of August, 2010 with the goal
-            of breaking all barriers that traders and investors face in India in
-            terms of cost, support, and technology. We named the company
-            Zerodha, a combination of Zero and "Rodha", the Sanskrit word for
-            barrier.
+            Zenvest helps new traders understand how markets, orders, watchlists,
+            holdings, and portfolio performance work without risking real money.
+            The platform is designed as a realistic simulator, not a brokerage.
           </p>
           <p>
-            Today, our disruptive pricing models and in-house technology have
-            made us the biggest stock broker in India.
+            Users can explore a clean dashboard, place practice buy orders,
+            review positions, track funds, and learn how trading decisions affect
+            a virtual portfolio.
           </p>
           <p>
-            Over 1+ Crore clients place millions of orders every day through our
-            powerful ecosystem of investment platforms, contributing over 15% of
-            all Indian retail trading volumes.
+            The goal is simple: make stock market practice less confusing and
+            more hands-on for students, beginners, and portfolio learners.
           </p>
         </div>
-        <div className="col-6 p-5">
+        <div className="col-md-6 p-5">
           <p>
-            In addition, we run a number of popular open online educational and
-            community initiatives to empower retail traders and investors.
+            The project includes a public landing website, a separate simulator
+            dashboard, and a backend API for accounts, orders, holdings,
+            positions, and portfolio data.
           </p>
           <p>
-            <a href="/" style={{ textDecoration: "none" }}>
-              Rainmatter
-            </a>
-            , our fintech fund and incubator, has invested in several fintech
-            startups with the goal of growing the Indian capital markets.
+            Zenvest focuses on learning flows: discover stocks, simulate trades,
+            inspect profit and loss, and understand risk before entering real
+            markets.
           </p>
           <p>
-            And yet, we are always up to something new every day. Catch up on
-            the latest updates on our blog or see what the media is saying about
-            us.
+            No real trades are placed through Zenvest. All balances, holdings,
+            and orders are part of the simulator experience.
           </p>
         </div>
       </div>

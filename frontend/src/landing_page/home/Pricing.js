@@ -6,13 +6,13 @@ function Pricing() {
     <div className="container">
       <div className="row align-items-center">
         <div className="col-md-4 section-left">
-          <h1 className="mb-3 fs-2">Unbeatable pricing</h1>
+          <h1 className="mb-3 fs-2">Simple simulator access</h1>
           <p>
-            We pioneered the concept of discount broking and price transparency in
-            India. Flat fees and no hidden charges.
+            Zenvest is a learning project. The simulator experience is designed
+            around virtual funds, practice orders, and portfolio education.
           </p>
           <Link to="/pricing" className="brand-link">
-            See pricing →
+            View simulator plan
           </Link>
         </div>
         <div className="col-md-2"></div>
@@ -20,18 +20,18 @@ function Pricing() {
           <div className="row text-center g-3">
             <div className="col-md-6">
               <div className="p-4 brand-card h-100">
-                <h1 className="mb-3">Rs. 0</h1>
+                <h1 className="mb-3">Free</h1>
                 <p>
-                  Free equity delivery and
+                  Public landing site and
                   <br />
-                  direct mutual funds
+                  simulator onboarding
                 </p>
               </div>
             </div>
             <div className="col-md-6">
               <div className="p-4 brand-card h-100">
-                <h1 className="mb-3">Rs. 20</h1>
-                <p>Intraday and F&amp;O</p>
+                <h1 className="mb-3">Virtual</h1>
+                <p>Practice trades only</p>
               </div>
             </div>
           </div>

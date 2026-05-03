@@ -8,56 +8,46 @@ function Footer() {
         <div className="row mt-5 g-4">
           <div className="col-md-3">
             <div className="brand-logo mb-3 d-inline-block">Zenvest</div>
-            <p>&copy; 2010 - 2024, Not Zerodha Broking Ltd. All rights reserved.</p>
+            <p>&copy; 2026 Zenvest simulator project. All rights reserved.</p>
           </div>
           <div className="col-md-3">
-            <p>Company</p>
-            <Link to="/about" className="brand-link">About</Link>
+            <p>Project</p>
+            <Link to="/about" className="brand-link">About Zenvest</Link>
             <br />
-            <Link to="/product" className="brand-link">Products</Link>
+            <Link to="/product" className="brand-link">Simulator tools</Link>
             <br />
-            <Link to="/pricing" className="brand-link">Pricing</Link>
+            <Link to="/pricing" className="brand-link">Simulator plan</Link>
             <br />
-            <a href="/" className="brand-link">Referral programme</a>
-            <br />
-            <a href="/" className="brand-link">Careers</a>
-            <br />
-            <a href="/" className="brand-link">Zerodha.tech</a>
-            <br />
-            <a href="/" className="brand-link">Press &amp; media</a>
-            <br />
-            <a href="/" className="brand-link">Zerodha cares (CSR)</a>
+            <Link to="/support" className="brand-link">Help center</Link>
           </div>
           <div className="col-md-3">
-            <p>Support</p>
-            <Link to="/support" className="brand-link">Contact</Link>
+            <p>Simulator</p>
+            <Link to="/signup" className="brand-link">Start simulator</Link>
             <br />
-            <a href="/" className="brand-link">Support portal</a>
+            <a href="/" className="brand-link">Watchlist practice</a>
             <br />
-            <a href="/" className="brand-link">Z-Connect blog</a>
+            <a href="/" className="brand-link">Portfolio tracking</a>
             <br />
-            <a href="/" className="brand-link">List of charges</a>
-            <br />
-            <a href="/" className="brand-link">Downloads &amp; resources</a>
+            <a href="/" className="brand-link">Order history</a>
           </div>
           <div className="col-md-3">
-            <p>Account</p>
-            <Link to="/signup" className="brand-link">Open an account</Link>
+            <p>Learning</p>
+            <a href="/" className="brand-link">Risk basics</a>
             <br />
-            <a href="/" className="brand-link">Fund transfer</a>
+            <a href="/" className="brand-link">Virtual funds</a>
             <br />
-            <a href="/" className="brand-link">60 day challenge</a>
+            <a href="/" className="brand-link">Practice guide</a>
           </div>
         </div>
         <div className="mt-5 text-muted brand-footer-note">
           <p>
-            Zerodha Broking Ltd.: Member of NSE and BSE. SEBI Registration no.:
-            INZ000031633. Depository services through Zerodha Securities Pvt. Ltd.
-            under SEBI Registration no. IN-DP-100-2015.
+            Zenvest is an educational stock trading simulator. It is not a
+            broker, exchange, demat provider, payment platform, or investment
+            advisory service.
           </p>
           <p>
-            Investments in securities market are subject to market risks. Read all
-            related documents carefully before investing.
+            All orders, balances, holdings, positions, and performance values
+            shown in the simulator are virtual and for learning purposes only.
           </p>
         </div>
       </div>

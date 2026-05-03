@@ -13,9 +13,9 @@ function Hero() {
             className="brand-hero-art"
           />
         </div>
-        <h1 className="mt-4 hero-animate-delay-1">Invest in everything</h1>
+        <h1 className="mt-4 hero-animate-delay-1">Practice stock trading</h1>
         <p className="fs-5 text-muted hero-animate-delay-2">
-          Online platform to invest in stocks, derivatives, mutual funds, and more.
+          A simulator for learning watchlists, virtual orders, holdings, and portfolio movement.
         </p>
         <div className="hero-animate-delay-3">
           <Link

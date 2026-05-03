@@ -43,7 +43,7 @@ const hero = svgToDataUri(`
 
     <rect x="130" y="192" width="270" height="148" rx="24" fill="#fff6e8" stroke="#efd9b8"/>
     <text x="160" y="238" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="${palette.muted}">Portfolio value</text>
-    <text x="160" y="287" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="${palette.ink}">Rs. 8.42L</text>
+    <text x="160" y="287" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="800" fill="${palette.ink}">8.42L VC</text>
     <path d="M160 312 L196 292 L228 304 L266 268 L312 284 L360 248" fill="none" stroke="${palette.green}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 
     <rect x="430" y="192" width="560" height="332" rx="26" fill="#ffffff" stroke="#d8e4f2"/>
@@ -74,13 +74,13 @@ const hero = svgToDataUri(`
     </g>
     <rect x="130" y="374" width="270" height="150" rx="24" fill="#eef8f3" stroke="#cfe9dc"/>
     <text x="160" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="${palette.muted}">Today P&amp;L</text>
-    <text x="160" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="800" fill="${palette.green}">+Rs. 12,840</text>
+    <text x="160" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="800" fill="${palette.green}">+12,840 VC</text>
     <rect x="130" y="560" width="1014" height="58" rx="18" fill="#fff" stroke="#e8dccb"/>
     <text x="164" y="596" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="${palette.ink}">Fast execution, clean portfolio insights, and a realistic trading simulator.</text>
   </svg>
 `);
 
-const broker = svgToDataUri(`
+const simulatorAnalytics = svgToDataUri(`
   <svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700">
     <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffaf2"/><stop offset="1" stop-color="#eef7ff"/></linearGradient></defs>
     <rect width="900" height="700" rx="36" fill="url(#b)"/>
@@ -165,7 +165,7 @@ const education = svgToDataUri(`
 
 export const placeholders = {
   hero,
-  broker,
+  simulatorAnalytics,
   press,
   ecosystem,
   education,
